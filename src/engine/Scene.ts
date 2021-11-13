@@ -1,5 +1,4 @@
 class Scene {
-
   constructor(gl: WebGL2RenderingContext) {
     this.init(gl);    
   }

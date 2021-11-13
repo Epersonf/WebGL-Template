@@ -1,5 +1,5 @@
 export default class Shader {
-  static createShader(gl: WebGL2RenderingContext, type, source): WebGLShader {
+  static createShader(gl: WebGL2RenderingContext, type: number, source: string): WebGLShader {
     const shader = gl.createShader(type);
     gl.shaderSource(shader, source);
     gl.compileShader(shader);
@@ -25,14 +25,14 @@ export default class Shader {
     return program;
   }
 
-  static isArrayBuffer(value): boolean {
+  static isArrayBuffer(value: Float32Array): boolean {
     return value && value.buffer instanceof ArrayBuffer && value.byteLength !== undefined;
   }
 
-  static createBuffer(gl: WebGL2RenderingContext, type: number, data: BufferSource): WebGLBuffer {
+  static createBuffer(gl: WebGL2RenderingContext, type: number, data: Float32Array): WebGLBuffer {
 
     if (!Shader.isArrayBuffer(data)) {
-      console.warn("Data is not an instance of ArrayBuffer");
+      console.warn("Data is not an instance of BufferSource");
       return null;
     }
 
