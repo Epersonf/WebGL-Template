@@ -1,4 +1,4 @@
-# Processing 5 + Typescript template
+# WEBGL2 + Typescript template
 
 ## Commands
 
